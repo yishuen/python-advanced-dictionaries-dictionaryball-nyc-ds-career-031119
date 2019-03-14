@@ -113,17 +113,17 @@ def all_players():
         players.update(x['players'])
     return players
 
-def num_points_scored():
+def num_points_scored(name):
     for p, s in all_players().items():
         if p == name:
             return s['points']
 
-def shoe_size():
+def shoe_size(name):
     for p, s in all_players().items():
         if p == name:
             return s['shoe']
 
-def team_colors():
+def team_colors(team):
     for t, s in game_dict().items():
         if s['team_name'] == team:
             return s['colors']
@@ -134,7 +134,7 @@ def team_names():
         names.append(s['team_name'])
     return names
 
-def player_numbers():
+def player_numbers(team):
     numbers = []
     for t, s in game_dict().items():
         if s['team_name'] == team:
@@ -142,7 +142,7 @@ def player_numbers():
                 numbers.append(stuff['number'])
     return numbers
 
-def player_stats():
+def player_stats(name):
     for p, s in all_players().items():
         if p == name:
             return s
